@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Slim\\source\\git\\CatMash\\CatMashService\\CatMashService.csproj",
+      "projectUniqueName": "C:\\Users\\Slim\\source\\new project\\CatMash\\CatMash\\CatMashService\\CatMashService.csproj",
       "projectName": "CatMashService",
-      "projectPath": "C:\\Users\\Slim\\source\\git\\CatMash\\CatMashService\\CatMashService.csproj",
+      "projectPath": "C:\\Users\\Slim\\source\\new project\\CatMash\\CatMash\\CatMashService\\CatMashService.csproj",
       "packagesPath": "C:\\Users\\Slim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Slim\\source\\git\\CatMash\\CatMashService\\obj\\",
+      "outputPath": "C:\\Users\\Slim\\source\\new project\\CatMash\\CatMash\\CatMashService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Slim\\AppData\\Roaming\\NuGet\\NuGet.Config",

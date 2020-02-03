@@ -6524,11 +6524,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Slim\\source\\git\\CatMash\\CatMashServiceTests\\CatMashServiceTests.csproj",
+      "projectUniqueName": "C:\\Users\\Slim\\source\\new project\\CatMash\\CatMash\\CatMashServiceTests\\CatMashServiceTests.csproj",
       "projectName": "CatMashServiceTests",
-      "projectPath": "C:\\Users\\Slim\\source\\git\\CatMash\\CatMashServiceTests\\CatMashServiceTests.csproj",
+      "projectPath": "C:\\Users\\Slim\\source\\new project\\CatMash\\CatMash\\CatMashServiceTests\\CatMashServiceTests.csproj",
       "packagesPath": "C:\\Users\\Slim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Slim\\source\\git\\CatMash\\CatMashServiceTests\\obj\\",
+      "outputPath": "C:\\Users\\Slim\\source\\new project\\CatMash\\CatMash\\CatMashServiceTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Slim\\AppData\\Roaming\\NuGet\\NuGet.Config",
