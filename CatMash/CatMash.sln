@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatMash", "CatMash\CatMash.csproj", "{C7E35AE4-262A-4B63-9E82-5847AB0F1430}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D639C736-8619-4CCE-A109-44B742D5796C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface", "Interface", "{D2A9D184-2C0A-417E-8624-0D1963CB2FFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{814F73EA-6CFB-4260-A0F5-231B002D388A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1A64D3E7-02FA-4A62-BD74-FFEECA19E485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatMashService", "CatMashService\CatMashService.csproj", "{C2596729-86DE-484E-9FDC-1386D5C8D69B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatMashServiceTests", "CatMashServiceTests\CatMashServiceTests.csproj", "{E84163EA-6EF0-49D4-8A6F-A2FA1B51C7D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7E35AE4-262A-4B63-9E82-5847AB0F1430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E35AE4-262A-4B63-9E82-5847AB0F1430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7E35AE4-262A-4B63-9E82-5847AB0F1430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E35AE4-262A-4B63-9E82-5847AB0F1430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2596729-86DE-484E-9FDC-1386D5C8D69B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2596729-86DE-484E-9FDC-1386D5C8D69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2596729-86DE-484E-9FDC-1386D5C8D69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2596729-86DE-484E-9FDC-1386D5C8D69B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E84163EA-6EF0-49D4-8A6F-A2FA1B51C7D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E84163EA-6EF0-49D4-8A6F-A2FA1B51C7D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E84163EA-6EF0-49D4-8A6F-A2FA1B51C7D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E84163EA-6EF0-49D4-8A6F-A2FA1B51C7D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C7E35AE4-262A-4B63-9E82-5847AB0F1430} = {D2A9D184-2C0A-417E-8624-0D1963CB2FFF}
+		{814F73EA-6CFB-4260-A0F5-231B002D388A} = {D639C736-8619-4CCE-A109-44B742D5796C}
+		{1A64D3E7-02FA-4A62-BD74-FFEECA19E485} = {D639C736-8619-4CCE-A109-44B742D5796C}
+		{C2596729-86DE-484E-9FDC-1386D5C8D69B} = {814F73EA-6CFB-4260-A0F5-231B002D388A}
+		{E84163EA-6EF0-49D4-8A6F-A2FA1B51C7D0} = {1A64D3E7-02FA-4A62-BD74-FFEECA19E485}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9CB86DDE-6DDB-426E-9B29-33E9AD227CFD}
+	EndGlobalSection
+EndGlobal
