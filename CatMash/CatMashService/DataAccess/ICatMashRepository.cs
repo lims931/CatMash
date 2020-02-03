@@ -7,7 +7,7 @@ namespace CatMashService.DataAccess
 {
     public interface ICatMashRepository
     {
-        int AddMatche(TMatche matche);
+        bool AddMatche(TMatche matche);
 
         TCat GetCatById(int id);
 

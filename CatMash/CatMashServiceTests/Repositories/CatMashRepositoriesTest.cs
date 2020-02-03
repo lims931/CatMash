@@ -126,5 +126,106 @@ namespace CatMashServiceTests.Repositories
                 Assert.NotNull(result.CatUrl);
             }
         }
+
+        [Fact]
+        public void Should_Exception_AddMatche_When_LeftCatId_NotFound()
+        {
+            var options = new DbContextOptionsBuilder<CatMashDBContext>()
+                .UseInMemoryDatabase(databaseName: "CatMashDB6")
+                .Options;
+
+            // Run the test against one instance of the context
+            using (var context = new CatMashDBContext(options))
+            {
+                context.TCat.Add(new TCat { CatId = 55, CatUrl = "img1" });
+                context.TCat.Add(new TCat { CatId = 56, CatUrl = "img2" });
+                context.TCat.Add(new TCat { CatId = 57, CatUrl = "img3" });
+                var updateCountTCat = context.SaveChanges();
+
+                Assert.Equal(3, updateCountTCat);
+
+                var matche = new TMatche() { LeftCatId = 11, RightCatId = 56, MatchResult = "x" };
+
+                var catMashRepository = new CatMashRepository(context);
+
+                Assert.Throws<ElementNotFoundException>(() => catMashRepository.AddMatche(matche));
+            }
+        }
+
+        [Fact]
+        public void Should_Exception_AddMatche_When_RightCatId_NotFound()
+        {
+            var options = new DbContextOptionsBuilder<CatMashDBContext>()
+                .UseInMemoryDatabase(databaseName: "CatMashDB7")
+                .Options;
+
+            // Run the test against one instance of the context
+            using (var context = new CatMashDBContext(options))
+            {
+                context.TCat.Add(new TCat { CatId = 55, CatUrl = "img1" });
+                context.TCat.Add(new TCat { CatId = 56, CatUrl = "img2" });
+                context.TCat.Add(new TCat { CatId = 57, CatUrl = "img3" });
+                var updateCountTCat = context.SaveChanges();
+
+                Assert.Equal(3, updateCountTCat);
+
+                var matche = new TMatche() { LeftCatId = 55, RightCatId = 20, MatchResult = "1" };
+
+                var catMashRepository = new CatMashRepository(context);
+
+                Assert.Throws<ElementNotFoundException>(() => catMashRepository.AddMatche(matche));
+            }
+        }
+
+        [Fact]
+        public void Should_Exception_AddMatche_When_MatchResult_Invalid()
+        {
+            var options = new DbContextOptionsBuilder<CatMashDBContext>()
+                .UseInMemoryDatabase(databaseName: "CatMashDB8")
+                .Options;
+
+            // Run the test against one instance of the context
+            using (var context = new CatMashDBContext(options))
+            {
+                context.TCat.Add(new TCat { CatId = 55, CatUrl = "img1" });
+                context.TCat.Add(new TCat { CatId = 56, CatUrl = "img2" });
+                context.TCat.Add(new TCat { CatId = 57, CatUrl = "img3" });
+                var updateCountTCat = context.SaveChanges();
+
+                Assert.Equal(3, updateCountTCat);
+
+                var matche = new TMatche() { LeftCatId = 55, RightCatId = 56, MatchResult = "UnknownResult" };
+
+                var catMashRepository = new CatMashRepository(context);
+
+                Assert.Throws<UnknownMatcheResultException>(() => catMashRepository.AddMatche(matche));
+            }
+        }
+
+        [Fact]
+        public void Should_OK_AddMatche_When_Valid_Params()
+        {
+            var options = new DbContextOptionsBuilder<CatMashDBContext>()
+                .UseInMemoryDatabase(databaseName: "CatMashDB9")
+                .Options;
+
+            // Run the test against one instance of the context
+            using (var context = new CatMashDBContext(options))
+            {
+                context.TCat.Add(new TCat { CatId = 55, CatUrl = "img1" });
+                context.TCat.Add(new TCat { CatId = 56, CatUrl = "img2" });
+                context.TCat.Add(new TCat { CatId = 57, CatUrl = "img3" });
+                var updateCountTCat = context.SaveChanges();
+
+                Assert.Equal(3, updateCountTCat);
+
+                var matche = new TMatche() { LeftCatId = 55, RightCatId = 56, MatchResult = "X" };
+
+                var catMashRepository = new CatMashRepository(context);
+                var result = catMashRepository.AddMatche(matche);
+
+                Assert.True(result);
+            }
+        }
     }
 }

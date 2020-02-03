@@ -1,4 +1,5 @@
 ﻿using CatMashService.Exceptions;
+using CatMashService.Transverse;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,32 @@ namespace CatMashService.DataAccess
             _catMashDBContext = catMashDBContext;
         }
 
-        public int AddMatche(TMatche matche)
+        public bool AddMatche(TMatche matche)
         {
-            throw new NotImplementedException();
+            var leftCatIdNotFound = _catMashDBContext.TCat.FirstOrDefault(x => x.CatId == matche.LeftCatId) == null;
+            var rightCatIdNotFound = _catMashDBContext.TCat.FirstOrDefault(x => x.CatId == matche.RightCatId) == null;
+
+            if (rightCatIdNotFound || leftCatIdNotFound)
+            {
+                throw new ElementNotFoundException();
+            }
+
+            var unknowMatcheResult = MatchResultHelper.IsValidMatchResult(matche.MatchResult);
+            if(unknowMatcheResult)
+            {
+                throw new UnknownMatcheResultException();
+            }
+
+            try
+            {
+                _catMashDBContext.TMatche.Add(matche);
+
+                return _catMashDBContext.SaveChanges() == 1;
+            }
+            catch (Exception exp)
+            {
+                throw new DataBaseAccessException("DataBaseAccessException", exp);
+            }
         }
 
         public IEnumerable<TCat> GetAllCats()
