@@ -13,7 +13,7 @@ CREATE TABLE T_Matche (
     MatcheId int IDENTITY(1,1) PRIMARY KEY,
 	LeftCatId int NOT NULL,
 	RightCatId int NOT NULL,
-	MatchResult VARCHAR (10) NOT NULL
-	CONSTRAINT [FK_Vote_WonMatches_CatId] FOREIGN KEY ([WinnerId]) REFERENCES [T_Cat] ([CatId]),
-	CONSTRAINT [FK_Vote_LostMatches_CatId] FOREIGN KEY ([LooserId]) REFERENCES [T_Cat] ([CatId])
+	MatchResult VARCHAR (10) NOT NULL,	
+	CONSTRAINT [FK_Match_LeftCatId_CatId] FOREIGN KEY ([LeftCatId]) REFERENCES [T_Cat] ([CatId]),
+	CONSTRAINT [FK_Match_RightCatId_CatId] FOREIGN KEY ([RightCatId]) REFERENCES [T_Cat] ([CatId])
 );
